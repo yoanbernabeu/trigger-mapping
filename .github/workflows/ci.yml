@@ -10,6 +10,10 @@ jobs:
       matrix:
         php-version: ['8.2', '8.3', '8.4']
         symfony-version: ['6.4.*', '7.4.*']
+        exclude:
+          # Symfony 6.4 doesn't officially support PHP 8.4
+          - php-version: '8.4'
+            symfony-version: '6.4.*'
         include:
           # Symfony 8 requires PHP 8.4+
           - php-version: '8.4'
@@ -50,6 +54,10 @@ jobs:
         php-version: ['8.2', '8.3', '8.4']
         symfony-version: ['6.4.*', '7.4.*']
         platform: [mysql, postgresql]
+        exclude:
+          # Symfony 6.4 doesn't officially support PHP 8.4
+          - php-version: '8.4'
+            symfony-version: '6.4.*'
         include:
           # Symfony 8 with MySQL
           - php-version: '8.4'
