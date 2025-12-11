@@ -114,7 +114,7 @@ jobs:
       - name: Run Functional Tests (MySQL)
         if: matrix.platform == 'mysql'
         env:
-          DATABASE_URL: 'mysql://test_user:test_password@127.0.0.1:3306/test_db?serverVersion=8.0'
+          DATABASE_URL: 'mysql://root:root_password@127.0.0.1:3306/test_db?serverVersion=8.0'
         run: vendor/bin/phpunit --testsuite=mysql
 
       - name: Run Functional Tests (PostgreSQL)
